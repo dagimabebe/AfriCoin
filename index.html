@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Africoin - Decentralized Finance</title>
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* App Container */
+    .app-container {
+      max-width: 100%;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .app-container {
+        max-width: 800px;
+        padding: 30px;
+      }
+    }
+
+    /* Header */
+    .app-header {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .app-header h1 {
+      font-size: 2rem;
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    .app-header p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    @media (min-width: 768px) {
+      .app-header h1 {
+        font-size: 2.5rem;
+      }
+
+      .app-header p {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Hero Image */
+    .hero-image {
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Navigation */
+    .app-nav {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .app-nav button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      flex: 1;
+      margin: 5px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .app-nav button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .app-nav button i {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 767px) {
+      .app-nav {
+        flex-direction: column;
+      }
+
+      .app-nav button {
+        width: 100%;
+      }
+    }
+
+    /* Sections */
+    section {
+      padding: 20px;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    /* Forms */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    form button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #1e7e34;
+      transform: scale(1.05);
+    }
+
+    /* Responsive Typography */
+    @media (max-width: 767px) {
+      form label,
+      form input,
+      form button {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Media Queries for Smaller Screens */
+    @media (max-width: 480px) {
+      body {
+        font-size: 0.9rem;
+      }
+
+      .app-container {
+        padding: 15px;
+      }
+
+      .app-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .app-header p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>Africoin</h1>
+      <p>Empowering Africans Through Decentralized Finance</p>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/600x300?text=Africoin+Platform" alt="Africoin Platform">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="app-nav">
+      <button onclick="navigateTo('wallet')">
+        <i class="fas fa-wallet"></i> Wallet
+      </button>
+      <button onclick="navigateTo('loans')">
+        <i class="fas fa-hand-holding-usd"></i> Loans
+      </button>
+      <button onclick="navigateTo('remittance')">
+        <i class="fas fa-arrow-circle-right"></i> Remittance
+      </button>
+    </nav>
+
+    <!-- Content Area -->
+    <main id="content">
+      <section id="wallet" class="hidden">
+        <h2>My Wallet</h2>
+        <p>Account Balance: <span id="balance">0 ETH</span></p>
+        <button onclick="refreshBalance()">Refresh</button>
+      </section>
+
+      <section id="loans" class="hidden">
+        <h2>Apply for a Loan</h2>
+        <form id="loan-form">
+          <label for="loan-amount">Amount:</label>
+          <input type="number" id="loan-amount" required />
+          <label for="loan-interest">Interest Rate (%):</label>
+          <input type="number" id="loan-interest" required />
+          <label for="loan-duration">Duration (Days):</label>
+          <input type="number" id="loan-duration" required />
+          <button type="submit">Apply</button>
+        </form>
+      </section>
+
+      <section id="remittance" class="hidden">
+        <h2>Send Money</h2>
+        <form id="remittance-form">
+          <label for="receiver-address">Receiver Address:</label>
+          <input type="text" id="receiver-address" required />
+          <label for="send-amount">Amount:</label>
+          <input type="number" id="send-amount" required />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Global Variables
+    let currentSection = "wallet";
+
+    // Helper Function: Show a specific section
+    function showSection(sectionId) {
+      document.querySelectorAll("section").forEach((section) => {
+        section.classList.remove("active");
+      });
+      document.getElementById(sectionId).classList.add("active");
+    }
+
+    // Navigation Function
+    function navigateTo(section) {
+      currentSection = section;
+      showSection(section);
+    }
+
+    // Wallet Functions
+    async function refreshBalance() {
+      const balanceElement = document.getElementById("balance");
+      try {
+        const balance = await fetchBalance();
+        balanceElement.textContent = `${balance} ETH`;
+      } catch (error) {
+        console.error("Error fetching balance:", error);
+      }
+    }
+
+    function fetchBalance() {
+      return new Promise((resolve) => {
+        setTimeout(() => resolve("1.23"), 1000); // Mock data
+      });
+    }
+
+    // Loan Form Submission
+    document.getElementById("loan-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const amount = document.getElementById("loan-amount").value;
+      const interestRate = document.getElementById("loan-interest").value;
+      const duration = document.getElementById("loan-duration").value;
+
+      try {
+        await applyForLoan(amount, interestRate, duration);
+        alert("Loan application submitted successfully!");
+      } catch (error) {
+        alert("Error applying for loan.");
+        console.error("Loan application failed:", error);
+      }
+    });
+
+    function applyForLoan(amount, interestRate, duration) {
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(), 1000); // Mock data
+      });
+    }
+
+    // Remittance Form Submission
+    document.getElementById("remittance-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const receiverAddress = document.getElementById("receiver-address").value;
+      const sendAmount = document.getElementById("send-amount").value;
+
+      try {
+        await sendFunds(receiverAddress, sendAmount);
+        alert("Funds sent successfully!");
+      } catch (error) {
+        alert("Error sending funds.");
+        console.error("Funds transfer failed:", error);
+      }
+    });
+
+    function sendFunds(receiverAddress, amount) {
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(), 1000); // Mock data
+      });
+    }
+  </script>
+</body>
+</html>
